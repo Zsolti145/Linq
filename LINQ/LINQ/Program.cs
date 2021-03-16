@@ -20,6 +20,15 @@ namespace LINQ
         public string Email;
         public Lakcim Cim;
     }
+
+    class Termek
+    {
+        public string Nev;
+        public string Sorszam;
+        public string GyartoID; //Kapcsolo mező
+        public DateTime Elkeszült;
+
+    }
     class Program
     {
         static void Main(string[] args)
@@ -169,10 +178,11 @@ namespace LINQ
             //Ugyan ez allekérdezéssel
 
             var max = (from szo in result8
+                       orderby szo.Length descending
                        select new
                        {
                            hossz = szo.Length
-                       }).Max();
+                       }).First();
 
             var leghosszabb2 = from szavak in result8
                                where szavak.Length == max.hossz
@@ -181,6 +191,56 @@ namespace LINQ
             Console.WriteLine("A leghosszabb szavak: ");
             foreach(var item in leghosszabb2)
                 Console.WriteLine("\t"+item);
+
+
+            //objektumok összekapcsolása
+            List<Termek> termekek = new List<Termek>()
+            {
+                new Termek()
+                {
+                    Nev = "Gyerekjáték",
+                    Sorszam = "qwert98ik",
+                    GyartoID = "XYZ987",
+                    Elkeszült = new DateTime(2020,10,2)
+                },
+                new Termek()
+                {
+                    Nev = "Társasjáték",
+                    Sorszam = "uhjnk123ert",
+                    GyartoID = "XYZ987",
+                    Elkeszült = new DateTime(2021,1,8)
+                },
+                new Termek()
+                {
+                    Nev = "Mikrohullámú sütő",
+                    Sorszam = "MNVJ419CD",
+                    GyartoID = "Abc123",
+                    Elkeszült = new DateTime(2020,3,29)
+                },
+            };
+            alkalmazottak.Add(
+                new Alkalmazott()
+                {
+                    ID = "IQ123",
+                    Nev = "Charlie",
+                    Email = "charlie1234@gmail.com",
+                    Cim = new Lakcim()
+                    {
+                        Orszag = "Egyseült Királyság",
+                        Varos = "London",
+                        Utca = "21. Street",
+                        Hazszam = 123
+                    }
+                }) ;
+            //Listázzuk ki, hoigy mely alkalmazott milyen terméket gyártott! -INNER JOIN
+            var resTermekek = from ember in alkalmazottak
+                              join termek in termekek on ember.ID equals termek.GyartoID
+                              select new
+                              {
+                                AlkNév = ember.Nev,
+                                 TermékNév = termek.Nev
+                              };
         }
+
     }
 }
