@@ -37,6 +37,27 @@ namespace LINQ
 
 
             //duplikált rekordok szűrése -Distinct
+
+
+
+
+
+
+            var result4 = (from szamok in lista
+                           select szamok).First();
+            Console.WriteLine("A lista első eleme: "+result4);
+            Console.WriteLine();
+
+            //Rendezés
+            //Rendezzük csökkenő sorrendbe a lista elemeit
+            var result5 = from szamok in lista
+                          orderby szamok descending
+                          select szamok;
+            foreach (var item in result5)
+                Console.Write( item + " ");
+            Console.WriteLine();
+
+            //CSoportosításl   
         }
     }
 }
