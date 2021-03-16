@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Linq_NyelviEszkozok
 {
-    class Program
+    public static class Kiterjesztett
     {
         public static string Reverse(this string input)
         {
@@ -15,6 +15,10 @@ namespace Linq_NyelviEszkozok
                 s += input[i];
             return s;
         }
+    }
+    class Program
+    {
+        
         static void Main(string[] args)
         {
 
