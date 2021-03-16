@@ -147,6 +147,20 @@ namespace LINQ
                 "Ezt a vad mezőt ismerem,",
                 "Ez a magyar Ugar."
             };
+            //Szeretném szavanként szétvágni a verset!
+
+            var result8 = from sor in vers
+                            let szavak = sor.Split(' ')
+                            from szo in szavak
+                            select szo;
+
+            foreach(var item in result8)
+                Console.WriteLine(item);
+
+            //Melyik a leghosszabb szó?
+            var leghosszabb = (from szo in result8
+                               select szo).Max();
+            Console.WriteLine("Leghosszabb szó: "+leghosszabb);
         }
     }
 }
