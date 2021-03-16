@@ -130,13 +130,23 @@ namespace LINQ
             var result7 = from ember in alkalmazottak
                           select new
                           {
-                              Nev = ember.Nev,
-                              Email = ember.Email
+                              ember.Nev,
+                              ember.Email
                           };
 
             foreach(var item in result7)
                 Console.WriteLine("Név "+item.Nev+", Email: "+item.Email);
             Console.WriteLine();
+
+
+            //Lekérdezésen belül változó létrehozása - Let
+            string[] vers = new string[]
+            {
+                "Elvadult tájon gázolok:",
+                "Ős,buja földön dudva,muhar.",
+                "Ezt a vad mezőt ismerem,",
+                "Ez a magyar Ugar."
+            };
         }
     }
 }
