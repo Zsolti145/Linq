@@ -143,7 +143,7 @@ namespace LINQ
             string[] vers = new string[]
             {
                 "Elvadult tájon gázolok:",
-                "Ős,buja földön dudva,muhar.",
+                "Ős,buja földön dudva, muhar.",
                 "Ezt a vad mezőt ismerem,",
                 "Ez a magyar Ugar."
             };
@@ -159,8 +159,28 @@ namespace LINQ
 
             //Melyik a leghosszabb szó?
             var leghosszabb = (from szo in result8
-                               select szo).Max();
-            Console.WriteLine("Leghosszabb szó: "+leghosszabb);
+                               orderby szo.Length descending
+                               select new
+                               {
+                                   szo,
+                                   hossz = szo.Length
+                               }).First();
+            Console.WriteLine("Leghosszabb szó: "+leghosszabb.szo+", karakterek száma: "+leghosszabb.hossz);
+            //Ugyan ez allekérdezéssel
+
+            var max = (from szo in result8
+                       select new
+                       {
+                           hossz = szo.Length
+                       }).Max();
+
+            var leghosszabb2 = from szavak in result8
+                               where szavak.Length == max.hossz
+                               select szavak;
+
+            Console.WriteLine("A leghosszabb szavak: ");
+            foreach(var item in leghosszabb2)
+                Console.WriteLine("\t"+item);
         }
     }
 }
