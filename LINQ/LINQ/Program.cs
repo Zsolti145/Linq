@@ -11,7 +11,7 @@ namespace LINQ
         public string Orszag;
         public string Varos;
         public string Utca;
-        public string Hazszam;
+        public int Hazszam;
     }
     class Alkalmazott
     {
@@ -92,6 +92,51 @@ namespace LINQ
                 foreach(var nev in csop)
                     Console.WriteLine("\t"+nev);
             }
+
+
+            //Projekcio
+            List<Alkalmazott> alkalmazottak = new List<Alkalmazott>()
+            {
+                new Alkalmazott()
+                {
+                    ID ="Abc123",
+                    Nev = "Kiss Irén",
+                    Email = "irenke123@ceges.hu",
+                    Cim = new Lakcim()
+                    {
+                        Orszag = "Magyarorszag",
+                        Varos = "Kecskemét",
+                        Utca = "Kossuth út",
+                        Hazszam = 19
+                    }
+                },
+                new Alkalmazott()
+                {
+                    ID ="XYZ987",
+                    Nev = "Vak Bela",
+                    Email = "bela_vak@ceges.hu",
+                    Cim = new Lakcim()
+                    {
+                        Orszag = "Magyarorszag",
+                        Varos = "Lajosmizse",
+                        Utca = "Petőfi Sándor utca",
+                        Hazszam = 2
+                    }
+                }
+            };
+
+            //Írjuk ki az alkalmazottakat (Név,Email)
+
+            var result7 = from ember in alkalmazottak
+                          select new
+                          {
+                              Nev = ember.Nev,
+                              Email = ember.Email
+                          };
+
+            foreach(var item in result7)
+                Console.WriteLine("Név "+item.Nev+", Email: "+item.Email);
+            Console.WriteLine();
         }
     }
 }
