@@ -5,7 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace LINQ
-{CLAs
+{
+    class Lakcim
+    {
+        public string Orszag;
+        public string Varos;
+        public string Utca;
+        public string Hazszam;
+    }
+    class Alkalmazott
+    {
+        public string ID;
+        public string Nev;
+        public string Email;
+        public Lakcim Cim;
+    }
     class Program
     {
         static void Main(string[] args)
