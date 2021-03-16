@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -54,10 +54,30 @@ namespace LINQ
                           orderby szamok descending
                           select szamok;
             foreach (var item in result5)
-                Console.Write(item + " ");
+
+                Console.Write( item + " ");
             Console.WriteLine();
 
             //CSoportosítás
+
+            List<string> állatok = new List<string>()
+            {
+                "Oroszlán","Zsiráf","Orángután","Pók","Hattyú","Polip","Sün","Lajhár","Ló","Elefánt","Egér"
+            };
+            //Csoportosítsunk az állatokat a  nevők kezdőbetűje alapján
+
+            var result6 = from nevek in állatok
+                          orderby nevek[0]
+                          group nevek by nevek[0]
+                          into csoport
+                          select csoport;
+             
+            foreach(var csop in result6)
+            {
+                Console.WriteLine(csop.Key + ":");
+                foreach(var nev in csop)
+                    Console.WriteLine("\t"+nev);
+            }
         }
     }
 }
