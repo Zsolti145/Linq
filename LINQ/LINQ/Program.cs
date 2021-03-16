@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace LINQ
-{
+{CLAs
     class Program
     {
         static void Main(string[] args)
@@ -72,7 +72,7 @@ namespace LINQ
                           into csoport
                           select csoport;
              
-            foreach(var csop in result6)
+            foreach(var csop in result6) 
             {
                 Console.WriteLine(csop.Key + ":");
                 foreach(var nev in csop)
