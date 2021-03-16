@@ -1,0 +1,6 @@
+C:\Users\zsolt\source\repos\LINQ\LINQ\bin\Debug\LINQ.exe.config
+C:\Users\zsolt\source\repos\LINQ\LINQ\bin\Debug\LINQ.exe
+C:\Users\zsolt\source\repos\LINQ\LINQ\bin\Debug\LINQ.pdb
+C:\Users\zsolt\source\repos\LINQ\LINQ\obj\Debug\LINQ.csproj.CoreCompileInputs.cache
+C:\Users\zsolt\source\repos\LINQ\LINQ\obj\Debug\LINQ.exe
+C:\Users\zsolt\source\repos\LINQ\LINQ\obj\Debug\LINQ.pdb

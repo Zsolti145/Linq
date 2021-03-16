@@ -1,0 +1,7 @@
+C:\Users\zsolt\Desktop\C#\LINQ\Linq_NyelviEszkozok\Linq_NyelviEszkozok\bin\Debug\Linq_NyelviEszkozok.exe.config
+C:\Users\zsolt\Desktop\C#\LINQ\Linq_NyelviEszkozok\Linq_NyelviEszkozok\bin\Debug\Linq_NyelviEszkozok.exe
+C:\Users\zsolt\Desktop\C#\LINQ\Linq_NyelviEszkozok\Linq_NyelviEszkozok\bin\Debug\Linq_NyelviEszkozok.pdb
+C:\Users\zsolt\Desktop\C#\LINQ\Linq_NyelviEszkozok\Linq_NyelviEszkozok\obj\Debug\Linq_NyelviEszkozok.csprojAssemblyReference.cache
+C:\Users\zsolt\Desktop\C#\LINQ\Linq_NyelviEszkozok\Linq_NyelviEszkozok\obj\Debug\Linq_NyelviEszkozok.csproj.CoreCompileInputs.cache
+C:\Users\zsolt\Desktop\C#\LINQ\Linq_NyelviEszkozok\Linq_NyelviEszkozok\obj\Debug\Linq_NyelviEszkozok.exe
+C:\Users\zsolt\Desktop\C#\LINQ\Linq_NyelviEszkozok\Linq_NyelviEszkozok\obj\Debug\Linq_NyelviEszkozok.pdb
